@@ -59,7 +59,7 @@
 
     @keyframes typing {
       0% { width: 0; }
-      100% { width: 12ch; }
+      100% { width: 15ch; }
     }
 
     @keyframes blink {
@@ -130,6 +130,19 @@
       text-align: left;
     }
 
+    /* Code blocks wrapping fix */
+    #readme-content pre {
+      overflow-x: auto;
+      max-width: 100%;
+      padding: 12px;
+      background-color: #f0f0f0;
+      border-radius: 6px;
+      font-size: 0.95em;
+      line-height: 1.4em;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -158,7 +171,7 @@
       background-color: #2e682e;
     }
 
-    /* Responsive (Mobile View) */
+    /* Responsive */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -210,7 +223,7 @@
       <img src="assets/github-mark.svg" alt="GitHub Mark">
       <img src="assets/GitHub_Logo.png" alt="GitHub Logo">
     </div>
-    <h1 class="typing-text">Hello!</h1>
+    <h1 class="typing-text">Amit Bhardwaj!</h1>
   </header>
 
   <!-- Hero Section -->
