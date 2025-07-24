@@ -16,6 +16,10 @@
       --text-dark: #17412f;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -30,6 +34,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
     }
 
     .logo-group img {
@@ -49,7 +59,7 @@
 
     @keyframes typing {
       0% { width: 0; }
-      100% { width: 15ch; }
+      100% { width: 12ch; }
     }
 
     @keyframes blink {
@@ -64,13 +74,13 @@
       align-items: center;
       justify-content: center;
       padding: 50px 20px;
+      gap: 30px;
     }
 
-    .hero-text {
-      flex: 1;
-      min-width: 300px;
+    .hero-text, .hero-image {
+      flex: 1 1 300px;
       max-width: 500px;
-      padding: 20px;
+      padding: 10px;
     }
 
     .hero-text h2 {
@@ -81,13 +91,6 @@
     .hero-text p {
       font-size: 1.1em;
       line-height: 1.6em;
-    }
-
-    .hero-image {
-      flex: 1;
-      max-width: 600px;
-      min-width: 300px;
-      padding: 20px;
     }
 
     .hero-image img {
@@ -107,16 +110,25 @@
     }
 
     #readme-content img {
-     max-width: 100%;
-     height: auto;
+      max-width: 100%;
+      height: auto;
     }
 
     #readme-content p img[src*="shields.io"] {
-     display: inline;
-     margin: 0;
-     vertical-align: middle;
-     }
+      display: inline;
+      margin: 0;
+      vertical-align: middle;
+    }
 
+    #readme-content h1,
+    #readme-content h2,
+    #readme-content h3,
+    #readme-content h4,
+    #readme-content h5,
+    #readme-content h6,
+    #readme-content p {
+      text-align: left;
+    }
 
     /* Footer */
     footer {
@@ -128,6 +140,7 @@
 
     a {
       color: #0077cc;
+      text-decoration: none;
     }
 
     button {
@@ -143,6 +156,48 @@
 
     button:hover {
       background-color: #2e682e;
+    }
+
+    /* Responsive (Mobile View) */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+      }
+
+      .logo-group {
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+      }
+
+      .typing-text {
+        font-size: 1.2em;
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+
+      .hero {
+        padding: 30px 10px;
+        flex-direction: column;
+      }
+
+      .hero-text h2 {
+        font-size: 1.8em;
+      }
+
+      .hero-text p {
+        font-size: 1em;
+      }
+
+      .hero-text, .hero-image {
+        max-width: 100%;
+        padding: 10px;
+      }
+
+      footer {
+        padding: 0 10px;
+      }
     }
   </style>
 </head>
@@ -188,7 +243,7 @@
 
   <!-- Footer -->
   <footer>
-   © 2025 AMIT | Built for the Open Source Community
+    © 2025 AMIT | Built for the Open Source Community
   </footer>
 
   <!-- JS: Load README using marked.js -->
