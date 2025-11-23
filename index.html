@@ -1,109 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" class="transition duration-300 scroll-smooth">
+<html lang="en" class="antialiased scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AMIT - Explore software, videos, anime, courses and more" />
-  <meta name="author" content="AMIT" />
-  <meta name="theme-color" content="#1e40af" />
+  <title>AMIT • All Websites & WebApps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore AMIT's tools, projects, and utilities" />
   <link rel="icon" href="favicon.ico" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: "class",
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            mono: ['Fira Code', 'monospace']
+            sans: ["Inter", "ui-sans-serif", "system-ui"],
+            mono: ["Fira Code", "monospace"],
           },
           boxShadow: {
-            card: '0 10px 30px rgba(0,0,0,0.08)',
+            card: "0 10px 30px rgba(15,23,42,0.12)",
           },
-        }
-      }
+          keyframes: {
+            float: {
+              "0%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-6px)" },
+              "100%": { transform: "translateY(0)" },
+            },
+          },
+          animation: {
+            float: "float 6s ease-in-out infinite",
+          },
+        },
+      },
     };
   </script>
+
+  <style>
+    .glass {
+      background: rgba(255,255,255,.65);
+      backdrop-filter: blur(6px);
+    }
+    .dark .glass {
+      background: rgba(15,23,42,0.55);
+    }
+    .cta-grad {
+      background: linear-gradient(90deg,#06b6d4,#3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-100 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-100 min-h-screen font-sans flex flex-col transition-all">
+<body class="bg-gradient-to-br from-slate-50 to-sky-50 dark:from-slate-900 dark:to-slate-800 min-h-screen text-slate-800 dark:text-slate-100 font-sans flex flex-col">
 
-  <!-- Header -->
-<header class="flex items-center justify-between py-4 px-6 md:px-12 shadow-md bg-white dark:bg-gray-900">
-  <div class="flex items-center gap-4">
-    <div class="font-mono text-xs sm:text-base md:text-lg whitespace-pre leading-tight">
-<pre>
-   A     M   M   III  TTTTT
-  A A    MM MM    I     T  
- AAAAA   M M M    I     T  
-A     A  M   M    I     T  
-A     A  M   M   III    T  
-</pre>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 glass border-b border-slate-200 dark:border-slate-800 px-6 sm:px-10 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- LOGO ASCII BLOCK -->
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-500 to-cyan-400 flex justify-center items-center text-white font-bold text-lg animate-float shadow-lg">
+          A
+        </div>
+        <span class="font-mono text-base leading-tight hidden sm:block">
+          AMIT<br />UTILITIES
+        </span>
+      </div>
+
+      <!-- THEME BUTTON -->
+      <button id="theme-toggle" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-xl">
+        🌙
+      </button>
     </div>
-  </div>
-  <!-- Move button to the right -->
-  <div>
-    <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded-full shadow hover:shadow-lg transition">
-      🌙 Dark Mode
-    </button>
-  </div>
-</header>
-  
-  <!-- Hero -->
-  <section class="text-center py-16 px-4 bg-gradient-to-b from-blue-50 dark:from-gray-800 to-transparent">
-    <h1 class="text-4xl font-bold mb-4 tracking-tight">Welcome!!!</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">Explore all websites in one place.</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="text-center py-16 px-4">
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+      Welcome to <span class="cta-grad">AMIT HUB</span>
+    </h1>
+    <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-300 text-lg">
+      Access all web tools, simulators, and media services from one page.
+    </p>
   </section>
 
-  <!-- Cards Grid -->
-  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 pb-20 max-w-7xl mx-auto">
-    <!-- Reusable card component -->
-    <a href="sumoobs.html"  target="_blank" class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-card hover:shadow-2xl transition transform hover:-translate-y-1 text-center">
+  <!-- GRID -->
+  <main class="max-w-7xl mx-auto px-6 sm:px-12 pb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- CARD - SUMO OBSTACLE -->
+    <a href="sumoobs.html" target="_blank"
+       class="block p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-card hover:shadow-2xl hover:-translate-y-2 transition text-center">
       <div class="text-4xl mb-4">🚗</div>
-      <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Sumo Obstacle</h2>
-      <p class="text-sm text-gray-500 dark:text-gray-300">Explore SUMO Obstacle Simulation.</p>
+      <h2 class="text-xl font-bold group-hover:text-blue-500">SUMO Obstacle</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+        SUMO simulation projects and experiments.
+      </p>
     </a>
 
-    <a href="embed.html"  target="_blank" class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-card hover:shadow-2xl transition transform hover:-translate-y-1 text-center">
+    <!-- CARD - EMBED TOOL -->
+    <a href="embed.html" target="_blank"
+       class="block p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-card hover:shadow-2xl hover:-translate-y-2 transition text-center">
       <div class="text-4xl mb-4">🎥</div>
-      <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Video Embed Generator</h2>
-      <p class="text-sm text-gray-500 dark:text-gray-300">Generate Embed Codes.</p>
+      <h2 class="text-xl font-bold group-hover:text-blue-500">Embed Generator</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+        Generate iFrame embed video links automatically.
+      </p>
     </a>
 
-    <a href="http://172.172.174.2" class="group bg-white dark:bg-gray-800 p-6 rounded-xl shadow-card hover:shadow-2xl transition transform hover:-translate-y-1 text-center">
-      <div class="text-4xl mb-4">💻</div>
-      <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Movies</h2>
-      <p class="text-sm text-gray-500 dark:text-gray-300">Acces all Movies & Contents From Server</p>
-    </a>
-    
   </main>
 
-  <!-- Footer -->
-  <footer class="mt-auto bg-white dark:bg-gray-900 border-t dark:border-gray-700 text-center py-6 text-sm text-gray-600 dark:text-gray-400">
-    © 2025 AMIT. Built with ❤️ using TailwindCSS.
+  <!-- FOOTER -->
+  <footer class="mt-auto text-center py-6 border-t dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur">
+    <p class="text-sm text-slate-500 dark:text-slate-400">
+      © 2025 AMIT • WebApps
+    </p>
   </footer>
 
-  <!-- Theme Toggle Script -->
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
-    function updateThemeUI() {
-      const isDark = html.classList.contains('dark');
-      themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    }
+    const btn = document.getElementById('theme-toggle');
 
     if (localStorage.getItem('theme') === 'dark') {
       html.classList.add('dark');
+      btn.textContent = "☀️";
     }
 
-    updateThemeUI();
-
-    themeToggle.addEventListener('click', () => {
+    btn.onclick = () => {
       html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      updateThemeUI();
-    });
+      const active = html.classList.contains('dark');
+      btn.textContent = active ? "☀️" : "🌙";
+      localStorage.setItem('theme', active ? "dark" : "light");
+    };
   </script>
 
 </body>
